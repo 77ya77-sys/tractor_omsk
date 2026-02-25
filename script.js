@@ -341,4 +341,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Инициализация
     updateQuiz();
+
+    /* ==============================
+       6. НИЖНЯЯ ФОРМА ЗАЯВКИ
+       ============================== */
+    const bottomForm = document.getElementById('bottom-form');
+    const successModal = document.getElementById('success-modal');
+    const successModalClose = document.getElementById('success-modal-close');
+    const successModalOverlay = document.getElementById('success-modal-overlay');
+
+    if (bottomForm && successModal) {
+        bottomForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Останавливаем стандартную отправку
+
+            // Здесь может быть AJAX запрос к серверу
+
+            // Очищаем форму
+            bottomForm.reset();
+
+            // Открываем модалку успеха
+            successModal.classList.add('is-active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        const closeSuccessModal = () => {
+            successModal.classList.remove('is-active');
+            document.body.style.overflow = '';
+        };
+
+        if (successModalClose) successModalClose.addEventListener('click', closeSuccessModal);
+        if (successModalOverlay) successModalOverlay.addEventListener('click', closeSuccessModal);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && successModal.classList.contains('is-active')) {
+                closeSuccessModal();
+            }
+        });
+    }
 });
