@@ -1004,10 +1004,11 @@ p {
     position: relative;
     background-color: var(--color-white);
     border-radius: var(--border-radius-lg);
-    width: 90%;
-    max-width: 600px;
+    width: 92%;
+    max-width: 480px;
     max-height: 90vh;
     overflow-y: auto;
+    overflow-x: hidden;
     z-index: 999999;
     box-shadow: var(--shadow-hover);
     transform: translateY(20px);
@@ -1020,14 +1021,14 @@ p {
 
 .modal__close {
     position: absolute;
-    top: 12px;
-    right: 12px;
-    width: 36px;
-    height: 36px;
-    background: rgba(0, 0, 0, 0.6);
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    background: rgba(0, 0, 0, 0.55);
     border: none;
     border-radius: 50%;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     line-height: 1;
     color: #FFFFFF;
     cursor: pointer;
@@ -1044,39 +1045,44 @@ p {
 
 .modal-detail__img {
     width: 100%;
-    height: 280px;
+    height: 260px;
     object-fit: contain;
     display: block;
-    background-color: var(--color-light-gray);
+    background-color: #F5F5F5;
     border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    margin: 0;
+    padding: 0;
 }
 
 .modal-detail__body {
-    padding: var(--spacing-lg);
+    padding: 16px 20px 20px;
 }
 
 .modal-detail__title {
-    font-size: 1.5rem;
-    margin-bottom: var(--spacing-sm);
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    line-height: 1.3;
 }
 
 .modal-detail__price {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 800;
     color: var(--color-primary);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 12px;
 }
 
 .modal-detail__section {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: 14px;
 }
 
 .modal-detail__section-title {
-    font-size: 1rem;
+    font-size: 0.75rem;
     color: var(--color-gray);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: 6px;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
+    font-weight: 600;
 }
 
 .modal-detail__specs {
@@ -1087,9 +1093,9 @@ p {
 .modal-detail__specs li {
     display: flex;
     justify-content: space-between;
-    padding: 8px 0;
+    padding: 5px 0;
     border-bottom: 1px solid var(--color-border);
-    font-size: 0.9375rem;
+    font-size: 0.8125rem;
 }
 
 .modal-detail__specs li span:first-child {
@@ -1107,10 +1113,10 @@ p {
 
 .modal-detail__ideal li {
     position: relative;
-    padding-left: 28px;
-    margin-bottom: 8px;
-    font-size: 0.9375rem;
-    line-height: 1.4;
+    padding-left: 22px;
+    margin-bottom: 5px;
+    font-size: 0.8125rem;
+    line-height: 1.35;
 }
 
 .modal-detail__ideal li::before {
@@ -1118,7 +1124,13 @@ p {
     position: absolute;
     left: 0;
     top: 0;
-    font-size: 1rem;
+    font-size: 0.8125rem;
+}
+
+.modal-detail__cta {
+    margin-top: 12px;
+    font-size: 0.875rem;
+    padding: 10px 16px;
 }
 
 /* -----------------------------
