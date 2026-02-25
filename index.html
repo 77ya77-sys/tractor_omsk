@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аренда спецтехники в Омске | 14 машин в парке | ООО «ОмскСпецТранс»</title>
+    <meta name="description"
+        content="Аренда строительной техники (экскаваторы, погрузчики, самосвалы) в Омске. Собственный автопарк из 14 машин. Работаем с НДС, доставка тралом.">
+    <!-- Подключаем шрифт Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container header__inner">
+            <div class="header__logo">
+                <span class="logo__text">ОмскСпецТранс</span>
+            </div>
+            <div class="header__contacts">
+                <div class="contact-item">
+                    <span class="contact-item__label">Работаем с НДС и без НДС</span>
+                    <a href="tel:+73812000000" class="contact-item__link">+7 (3812) 00-00-00</a>
+                </div>
+                <a href="#quiz-section" class="btn btn-primary header__btn">Рассчитать стоимость</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Секция 1: Hero (Первый экран) - Индустриальный строгий стиль -->
+        <section class="hero hero--industrial">
+            <div class="container hero__inner">
+                <div class="hero__content">
+                    <div class="badge badge--primary">Омск и Омская область</div>
+                    <h1 class="hero__title">Аренда спецтехники напрямую из собственного парка</h1>
+                    <p class="hero__subtitle">Обеспечиваем строительные объекты надежной техникой. 14 единиц в
+                        оперативном резерве. Без скрытых наценок диспетчеров.</p>
+
+                    <div class="metrics metrics--dark">
+                        <div class="metric">
+                            <span class="metric__icon">🚜</span>
+                            <span class="metric__value">14 машин</span>
+                            <span class="metric__label">Собственный автопарк</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric__icon">⏱️</span>
+                            <span class="metric__value">от 2 часов</span>
+                            <span class="metric__label">Подача на объект</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric__icon">📄</span>
+                            <span class="metric__value">С НДС / Без НДС</span>
+                            <span class="metric__label">Официальный договор</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric__icon">🚛</span>
+                            <span class="metric__value">Свой трал</span>
+                            <span class="metric__label">Доставка негабарита</span>
+                        </div>
+                    </div>
+
+                    <div class="hero__actions">
+                        <a href="#quiz-section" class="btn btn-primary">Подобрать технику</a>
+                        <a href="#fleet" class="btn btn-outline-light">Смотреть каталог</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Квиз-калькулятор (Перемещен выше каталога для конверсии) -->
+        <section id="quiz-section" class="quiz-section section bg-light">
+            <div class="container">
+                <div class="quiz-card">
+                    <h2 class="quiz-card__title">Рассчитать стоимость за 30 секунд</h2>
+                    <p class="quiz-card__subtitle">Ответьте на 3 коротких вопроса, и мы подготовим для вас персональное
+                        коммерческое предложение.</p>
+
+                    <div class="quiz" id="quiz-app">
+                        <!-- Прогресс -->
+                        <div class="quiz__progress-bar">
+                            <div class="quiz__progress-fill" id="quiz-progress-fill" style="width: 25%;"></div>
+                        </div>
+                        <div class="quiz__steps-indicator" id="quiz-step-text">Шаг 1 из 4</div>
+
+                        <form id="quiz-form">
+                            <!-- Шаг 1 -->
+                            <div class="quiz__step active" data-step="1">
+                                <h3 class="quiz__question">Какая задача перед вами стоит?</h3>
+                                <div class="quiz__options grid-2">
+                                    <label class="quiz__option"><input type="radio" name="task_type"
+                                            value="Земляные работы"><span>Земляные работы (котлованы,
+                                            траншеи)</span></label>
+                                    <label class="quiz__option"><input type="radio" name="task_type"
+                                            value="Доставка/Погрузка"><span>Доставка сыпучих материалов,
+                                            погрузка</span></label>
+                                    <label class="quiz__option"><input type="radio" name="task_type"
+                                            value="Снос"><span>Снос зданий, демонтаж</span></label>
+                                    <label class="quiz__option"><input type="radio" name="task_type"
+                                            value="Благоустройство"><span>Благоустройство, планировка
+                                            участка</span></label>
+                                </div>
+                            </div>
+
+                            <!-- Шаг 2 -->
+                            <div class="quiz__step" data-step="2">
+                                <h3 class="quiz__question">Какая категория техники вас интересует?</h3>
+                                <div class="quiz__options grid-3">
+                                    <label class="quiz__option"><input type="radio" name="equipment"
+                                            value="Экскаваторы"><span>Экскаваторы</span></label>
+                                    <label class="quiz__option"><input type="radio" name="equipment"
+                                            value="Погрузчики"><span>Погрузчики</span></label>
+                                    <label class="quiz__option"><input type="radio" name="equipment"
+                                            value="Самосвалы"><span>Самосвалы</span></label>
+                                    <label class="quiz__option"><input type="radio" name="equipment"
+                                            value="Манипуляторы"><span>Манипуляторы</span></label>
+                                    <label class="quiz__option"><input type="radio" name="equipment"
+                                            value="Консультация"><span>Нужна консультация инженера</span></label>
+                                </div>
+                            </div>
+
+                            <!-- Шаг 3 -->
+                            <div class="quiz__step" data-step="3">
+                                <h3 class="quiz__question">Планируемый срок аренды?</h3>
+                                <div class="quiz__options grid-2">
+                                    <label class="quiz__option"><input type="radio" name="duration"
+                                            value="1 смена"><span>1 смена (8 часов)</span></label>
+                                    <label class="quiz__option"><input type="radio" name="duration"
+                                            value="2-5 смен"><span>2-5 смен</span></label>
+                                    <label class="quiz__option"><input type="radio" name="duration"
+                                            value="Более недели"><span>От 1 недели</span></label>
+                                    <label class="quiz__option"><input type="radio" name="duration"
+                                            value="Месяц и более"><span>Месяц и более (спец. условия)</span></label>
+                                </div>
+                            </div>
+
+                            <!-- Шаг 4 (Форма) -->
+                            <div class="quiz__step" data-step="4">
+                                <h3 class="quiz__question">Куда отправить расчет?</h3>
+                                <p class="quiz__desc">Укажите контактный номер. Перезвоним в течение 10 минут с готовыми
+                                    цифрами.</p>
+                                <div class="quiz__form-group">
+                                    <input type="tel" name="phone" id="quiz-phone"
+                                        class="form-control form-control--large" placeholder="+7 (___) ___-__-__"
+                                        required>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block btn--large">Получить
+                                    предварительный расчёт</button>
+                                <div class="form-policy">Оставляя заявку, вы соглашаетесь с <a href="#">политикой
+                                        конфиденциальности</a>.</div>
+                            </div>
+
+                            <!-- Навигация квиза -->
+                            <div class="quiz__actions" id="quiz-actions">
+                                <button type="button" class="btn btn-outline" id="quiz-prev"
+                                    style="display: none;">Назад</button>
+                                <button type="button" class="btn btn-primary" id="quiz-next" disabled>Далее</button>
+                            </div>
+
+                            <!-- Сообщение об успехе -->
+                            <div class="quiz__success" id="quiz-success" style="display: none;">
+                                <div class="success-icon">✅</div>
+                                <h3>Заявка принята!</h3>
+                                <p>Инженер уже приступил к расчету. Ожидайте звонка с номера +7 (3812) 00-00-00.</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция 3: Полный парк техники (14 единиц) -->
+        <section id="fleet" class="fleet section">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Наш автопарк (14 единиц техники)</h2>
+                    <p class="section__subtitle">Вся техника своевременно проходит ТО и подается заправленной, с опытным
+                        оператором.</p>
+                </div>
+
+                <!-- Фильтры -->
+                <div class="fleet__tabs" id="fleet-tabs">
+                    <button class="tab-btn active" data-filter="all">Вся техника (14)</button>
+                    <button class="tab-btn" data-filter="excavators">Экскаваторы (4)</button>
+                    <button class="tab-btn" data-filter="loaders">Погрузчики (4)</button>
+                    <button class="tab-btn" data-filter="dump_trucks">Самосвалы (3)</button>
+                    <button class="tab-btn" data-filter="manipulators">Манипуляторы (2)</button>
+                    <button class="tab-btn" data-filter="tractors">Тракторы (1)</button>
+                </div>
+
+                <div class="carousel-wrapper">
+                    <button class="carousel-btn carousel-btn--prev" id="carousel-prev" aria-label="Предыдущие">◀</button>
+                    <div class="carousel-track" id="fleet-track">
+                    <!-- 1. Экскаватор-погрузчик JCB -->
+                    <article class="card" data-category="loaders">
+                        <div class="card__photo">
+                            <img src="https://loremflickr.com/600/400/backhoe,jcb/all"
+                                alt="Экскаватор-погрузчик JCB 3CX" class="card__img" loading="lazy">
+                        </div>
+                        <div class="card__content">
+                            <span class="card__badge">Погрузчик</span>
+                            <h3 class="card__title">Экскаватор-погрузчик JCB 3CX</h3>
+                            <ul class="card__specs">
+                                <li>Фронтальный ковш: 1 м³</li>
+                                <li>Глубина копания: 4.2 м</li>
+                                <li>Навесное: гидромолот, ямобур</li>
+                            </ul>
+                            <div class="card__footer">
+                                <div class="card__price">от 2 800 ₽/ч</div>
+                                <a href="#quiz-section" class="btn btn-primary btn--small">Рассчитать</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 2. Caterpillar 428F -->
+                    <article class="card" data-category="loaders">
+                        <div class="card__photo">
+                            <img src="https://loremflickr.com/600/400/caterpillar,backhoe/all" alt="Caterpillar 428F"
+                                class="card__img" loading="lazy">
+                        </div>
+                        <div class="card__content">
+                            <span class="card__badge">Погрузчик</span>
+                            <h3 class="card__title">Экскаватор-погрузчик CAT 428F</h3>
+                            <ul class="card__specs">
+                                <li>Фронтальный ковш: 1.03 м³</li>
+                                <li>Глубина копания: 4.3 м</li>
+                                <li>Повышенная проходимость</li>
+                            </ul>
+                            <div class="card__footer">
+                                <div class="card__price">от 2 900 ₽/ч</div>
+                                <a href="#quiz-section" class="btn btn-primary btn--small">Рассчитать</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 3. Фронтальный погрузчик XCMG -->
+                    <article class="card" data-category="loaders">
+                        <div class="card__photo">
+                            <img src="https://loremflickr.com/600/400/frontloader,construction/all" alt="XCMG LW300"
+                                class="card__img" loading="lazy">
+                        </div>
+                        <div class="card__content">
+                            <span class="card__badge">Фронтальный</span>
+                            <h3 class="card__title">Фронтальный погрузчик XCMG</h3>
+                            <ul class="card__specs">
+                                <li>Объем ковша: 1.8 м³</li>
+                                <li>Грузоподъемность: 3 т</li>
+                                <li>Для сыпучих материалов</li>
+                            </ul>
+                            <div class="card__footer">
+                                <div class="card__price">от 2 600 ₽/ч</div>
+                                <a href="#quiz-section" class="btn btn-primary btn--small">Рассчитать</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 4. Мини-погрузчик Bobcat -->
+                    <article class="card" data-category="loaders">
+                        <div class="card__photo">
+                            <img src="https://loremflickr.com/600/400/skidsteer,bobcat/all" alt="Bobcat S530"
+                                class="card__img" loading="lazy">
+                        </div>
+                        <div class="card__content">
+                            <span class="card__badge">Мини</span>
+                            <h3 class="card__title">Мини-погрузчик Bobcat S530</h3>
+                            <ul class="card__specs">
+                                <li>Грузоподъемность: 869 кг</li>
+                                <li>Маневренность, тесные участки</li>
+                                <li>Навесное: щетка, вилы</li>
+                            </ul>
+                            <div class="card__footer">
+                                <div class="card__price">от 2 400 ₽/ч</div>
+                                <a href="#quiz-section" class="btn btn-primary btn--small">Рассчитать</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 5. Гусеничный Doosan 22т -->
+                    <article class="card" data-category="excavators">
+                        <div class="card__photo">
+                            <img src="https://loremflickr.com/600/400/excavator,doosan/all" alt="Doosan 225"
+                                class="card__img" loading="lazy">
+                        </div>
+                        <div class="card__content">
+                            <span class="card__badge">Гусеничный</span>
+                            <h3 class="card__title">Гусеничный экскаватор Doosan (22 т)</h3>
+                            <ul class="card__specs">
+                                <li>Ковш: 1.2 м³</li>
+                                <li>Глубина копания: 6.6 м</li>
+                                <li>Тяжелые котлованы</li>
+                            </ul>
+                            <div class="card__footer">
+                                <div class="card__price">от 3 500 ₽/ч</div>
+                                <a href="#quiz-section" class="btn btn-primary btn--small">Рассчитать</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 6. Гусеничный Hitachi 330 -->
+                    <article class="card" data-category="excavators">
+                        <div class="card__photo">
+                            <img src="https://loremflickr.com/600/400/excavator,hitachi/all" alt="Hitachi 330"
+                                class="card__img" loading="lazy">
+                        </div>
+                        <div class="card__content">
+                            <span class="card__badge">Тяжелый</span>
+                            <h3 class="card__title">Гусеничный экскаватор Hitachi 330</h3>
+                            <ul class="card__specs">
+                                <li>Масса: 33 т | Ковш: 1.6 м³</li>
+                                <li>Глубина копания: 7.4 м</li>
+                                <li>Высокая производительность</li>
+                            </ul>
+                            <div class="card__footer">
+                                <div class="card__price">от 4 200 ₽/ч</div>
+                                <a href="#quiz-section" class="btn btn-primary btn--small">Рассчитать</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 7. Колесный Hyundai 140 -->
+                    <article class="card" data-category="excavators">
+                        <div class="card__photo">
+                            <img src="https://loremflickr.com/600/400/wheeled,excavator/all" alt="Hyundai 140w"
+                                class="card__img" loading="lazy">
+                        </div>
+                        <div class="card__content">
+                            <span class="card__badge">Колесный</span>
+                            <h3 class="card__title">Колесный экскаватор Hyundai 140w</h3>
+                            <ul class="card__specs">
+                                <li>Масса: 14 т | Ковш: 0.6 м³</li>
+                                <li>Плавный ход по асфальту</li>
+                                <li>Городские коммуникации</li>
+                            </ul>
+                            <div class="card__footer">
+                                <div class="card__price">от 3 300 ₽/ч</div>
+                                <a href="#quiz-section" class="btn btn-primary btn--small">Рассчитать</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 8. Мини-экскаватор Kubota -->
+                    <article class="card" data-category="excavators">
+                        <div class="card__photo">
+                            <img src="https://loremflickr.com/600/400/miniexcavator/all" alt="Kubota 3.5т"
+                                class="card__img" loading="lazy">
+                        </div>
+                        <div class="card__content">
+                            <span class="card__badge">Мини</span>
+                            <h3 class="card__title">Мини-экскаватор Kubota (3.5 т)</h3>
+                            <ul class="card__specs">
+                                <li>Резиновые гусеницы</li>
+                                <li>Глубина копания: 3.2 м</li>
+                                <li>Не портит газон</li>
+                            </ul>
+                            <div class="card__footer">
+                                <div class="card__price">от 2 500 ₽/ч</div>
+                                <a href="#quiz-section" class="btn btn-primary btn--small">Рассчитать</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 9. Самосвал КАМАЗ 15т -->
+                    <article class="card" data-category="dump_trucks">
+                        <div class="card__photo">
+                            <img src="https://loremflickr.com/600/400/dumptruck,kamaz/all" alt="КАМАЗ 15т"
+                                class="card__img" loading="lazy">
+                        </div>
+                        <div class="card__content">
+                            <span class="card__badge">Самосвал</span>
+                            <h3 class="card__title">Самосвал КАМАЗ 65115 (15 т)</h3>
+                            <ul class="card__specs">
+                                <li>Грузоподъемность: 15 т</li>
+                                <li>Объем кузова: 10 м³</li>
+                                <li>Вывоз грунта, снега</li>
+                            </ul>
+                            <div class="card__footer">
+                                <div class="card__price">от 2 000 ₽/ч</div>
+                                <a href="#quiz-section" class="btn btn-primary btn--small">Рассчитать</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 10. Самосвал КАМАЗ 20т -->
+                    <article class="card" data-category="dump_trucks">
+                        <div class="card__photo">
+                            <img src="https://loremflickr.com/600/400/dumptruck,construction/all" alt="КАМАЗ 20т"
+                                class="card__img" loading="lazy">
+                        </div>
+                        <div class="card__content">
+                            <span class="card__badge">Самосвал</span>
+                            <h3 class="card__title">Самосвал КАМАЗ 6520 (20 т)</h3>
+                            <ul class="card__specs">
+                                <li>Грузоподъемность: 20 т</li>
+                                <li>Объем кузова: 12 м³</li>
+                                <li>Повышенная грузоподъемность</li>
+                            </ul>
+                            <div class="card__footer">
+                                <div class="card__price">от 2 200 ₽/ч</div>
+                                <a href="#quiz-section" class="btn btn-primary btn--small">Рассчитать</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 11. Shacman 25т -->
+                    <article class="card" data-category="dump_trucks">
+                        <div class="card__photo">
+                            <img src="https://loremflickr.com/600/400/tippertruck/all" alt="Shacman 25т"
+                                class="card__img" loading="lazy">
+                        </div>
+                        <div class="card__content">
+                            <span class="card__badge">Самосвал 4-осный</span>
+                            <h3 class="card__title">Самосвал Shacman (25 т)</h3>
+                            <ul class="card__specs">
+                                <li>Грузоподъемность: 25 т</li>
+                                <li>Объем кузова: 19 м³</li>
+                                <li>Масштабные выработки</li>
+                            </ul>
+                            <div class="card__footer">
+                                <div class="card__price">от 2 500 ₽/ч</div>
+                                <a href="#quiz-section" class="btn btn-primary btn--small">Рассчитать</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 12. Манипулятор Isuzu 5т -->
+                    <article class="card" data-category="manipulators">
+                        <div class="card__photo">
+                            <img src="https://loremflickr.com/600/400/crane,truck/all" alt="Isuzu 5т"
+                                class="card__img" loading="lazy">
+                        </div>
+                        <div class="card__content">
+                            <span class="card__badge">Манипулятор</span>
+                            <h3 class="card__title">КМУ Isuzu (Борт 5т / Стрела 3т)</h3>
+                            <ul class="card__specs">
+                                <li>Борт: 5 тонн, длина 6 м</li>
+                                <li>Стрела: 3 тонны, вылет 8 м</li>
+                                <li>Стройматериалы, бытовки</li>
+                            </ul>
+                            <div class="card__footer">
+                                <div class="card__price">от 2 300 ₽/ч</div>
+                                <a href="#quiz-section" class="btn btn-primary btn--small">Рассчитать</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 13. Манипулятор КАМАЗ 7т -->
+                    <article class="card" data-category="manipulators">
+                        <div class="card__photo">
+                            <img src="https://loremflickr.com/600/400/kamaz,crane/all" alt="КАМАЗ КМУ"
+                                class="card__img" loading="lazy">
+                        </div>
+                        <div class="card__content">
+                            <span class="card__badge">Манипулятор Вездеход</span>
+                            <h3 class="card__title">КМУ КАМАЗ 43118 (Вездеход)</h3>
+                            <ul class="card__specs">
+                                <li>Борт: 10 тонн, длина 6.2 м</li>
+                                <li>Стрела: 7 тонн, вылет 19 м</li>
+                                <li>Сложные грунты, бездорожье</li>
+                            </ul>
+                            <div class="card__footer">
+                                <div class="card__price">от 3 000 ₽/ч</div>
+                                <a href="#quiz-section" class="btn btn-primary btn--small">Рассчитать</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 14. МТЗ 82.1 -->
+                    <article class="card" data-category="tractors">
+                        <div class="card__photo">
+                            <img src="https://loremflickr.com/600/400/tractor,mtz/all" alt="МТЗ 82.1"
+                                class="card__img" loading="lazy">
+                        </div>
+                        <div class="card__content">
+                            <span class="card__badge">Трактор</span>
+                            <h3 class="card__title">Колесный трактор МТЗ 82.1</h3>
+                            <ul class="card__specs">
+                                <li>Масса: 4 т</li>
+                                <li>Щетка, отвал, ковш</li>
+                                <li>Уборка снега, планировка</li>
+                            </ul>
+                            <div class="card__footer">
+                                <div class="card__price">от 2 200 ₽/ч</div>
+                                <a href="#quiz-section" class="btn btn-primary btn--small">Рассчитать</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    </div>
+                    <button class="carousel-btn carousel-btn--next" id="carousel-next" aria-label="Следующие">▶</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция 4: Процесс работы -->
+        <section id="process" class="process section bg-light">
+            <div class="container">
+                <h2 class="section__title text-center">Работаем строго по регламенту</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step__num">1</div>
+                        <h4 class="step__title">Точный расчет</h4>
+                        <p class="step__desc">Инженер учитывает сложность грунта, габариты и логистику. Сумма
+                            фиксируется.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step__num">2</div>
+                        <h4 class="step__title">Документооборот</h4>
+                        <p class="step__desc">Быстрое оформление договора. Работаем с юридическими (НДС/без НДС) и
+                            физлицами.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step__num">3</div>
+                        <h4 class="step__title">Мобилизация техники</h4>
+                        <p class="step__desc">Собственный трал доставляет тяжелую гусеничную технику точно к началу
+                            смены.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step__num">4</div>
+                        <h4 class="step__title">Закрывающие документы</h4>
+                        <p class="step__desc">По окончании работ предоставляем ЭДО, акты и путевые листы без задержек.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция 5: Факты -->
+        <section id="facts" class="facts section hero--industrial text-white">
+            <div class="container">
+                <h2 class="section__title text-center" style="color: #fff;">Мы не диспетчеры. Мы собственники.</h2>
+                <div class="fact-grid">
+                    <div class="fact-item">
+                        <div class="fact-item__val">14</div>
+                        <div class="fact-item__lbl">Единиц техники в парке</div>
+                    </div>
+                    <div class="fact-item">
+                        <div class="fact-item__val">2018</div>
+                        <div class="fact-item__lbl">Год основания компании</div>
+                    </div>
+                    <div class="fact-item">
+                        <div class="fact-item__val">0 ₽</div>
+                        <div class="fact-item__lbl">Наценок посредников</div>
+                    </div>
+                    <div class="fact-item">
+                        <div class="fact-item__val">100%</div>
+                        <div class="fact-item__lbl">Машин с пройденным ТО</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Подвал и юридическая информация -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__col">
+                <div class="footer__logo">ОмскСпецТранс</div>
+                <p class="footer__desc">Надежный партнер в сфере аренды строительной техники в Омском регионе.</p>
+            </div>
+            <div class="footer__col">
+                <h4 class="footer__title">Навигация</h4>
+                <ul class="footer__links">
+                    <li><a href="#quiz-section">Подобрать технику</a></li>
+                    <li><a href="#fleet">Парк (14 машин)</a></li>
+                    <li><a href="#process">Процесс работы</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4 class="footer__title">Контакты</h4>
+                <ul class="footer__contacts">
+                    <li>📞 <a href="tel:+73812000000">+7 (3812) 00-00-00</a></li>
+                    <li>📍 г. Омск, ул. Заводская, 14</li>
+                    <li>⏰ Ежедневно 08:00 - 20:00</li>
+                </ul>
+            </div>
+            <div class="footer__col text-muted">
+                <h4 class="footer__title">Реквизиты</h4>
+                <p>ООО «ОмскСпецТранс»</p>
+                <p>ИНН: 5504123456</p>
+                <p>ОГРН: 1235500012345</p>
+                <p>С НДС и без НДС</p>
+            </div>
+        </div>
+        <div class="container footer__bottom">
+            <p>&copy; 2026 ООО «ОмскСпецТранс». Эталонный проект.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
