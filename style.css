@@ -364,6 +364,20 @@ p {
     overflow: hidden;
 }
 
+@keyframes btn-shine {
+    0% {
+        left: -100%;
+    }
+
+    20% {
+        left: 100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
 .btn--hero-cta::after {
     content: '';
     position: absolute;
@@ -371,12 +385,8 @@ p {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.6s ease;
-}
-
-.btn--hero-cta:hover::after {
-    left: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    animation: btn-shine 4s ease-in-out infinite;
 }
 
 .btn--hero-cta:not(:disabled):hover {
@@ -965,6 +975,16 @@ p {
     margin-top: 10px;
     font-size: 0.875rem;
     padding: 10px;
+    background-color: transparent !important;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary) !important;
+    box-shadow: none !important;
+    transition: var(--transition);
+}
+
+.card__cta:hover {
+    background-color: var(--color-primary) !important;
+    color: var(--color-dark) !important;
 }
 
 /* -----------------------------
