@@ -1099,15 +1099,21 @@ p {
     background: rgba(0, 0, 0, 0.85);
 }
 
-.modal-detail__img {
+.modal-img-wrapper {
     width: 100%;
-    height: 260px;
-    object-fit: contain;
-    display: block;
-    background-color: #F5F5F5;
-    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
     margin: 0;
     padding: 0;
+    background-color: #F5F5F5;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    overflow: hidden;
+}
+
+.modal-detail__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .modal-detail__body {

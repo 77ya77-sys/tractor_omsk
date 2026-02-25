@@ -278,7 +278,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         modalBody.innerHTML = `
-            <img src="${cardData.img}" class="modal-detail__img" alt="${cardData.model}">
+            <div class="modal-img-wrapper">
+                <img src="${cardData.img}" class="modal-detail__img" alt="${cardData.model}">
+            </div>
             <div class="modal-detail__body">
                 <h3 class="modal-detail__title">${cardData.model}</h3>
                 <div class="modal-detail__price">${cardData.price}</div>
