@@ -321,6 +321,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalClose) modalClose.addEventListener('click', closeModal);
     if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
 
+    // Закрытие по Esc
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal && modal.classList.contains('is-active')) {
+            closeModal();
+        }
+    });
+
     /* ==============================
        5. FAQ АККОРДЕОНЫ
        ============================== */
