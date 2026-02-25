@@ -97,19 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial check
     setTimeout(updateCarouselButtons, 100);
 
-    /* ==============================
-       1.5. HEADER SCROLL SHADOW
-       ============================== */
-    const header = document.querySelector('.header');
-    if (header) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 10) {
-                header.classList.add('is-scrolled');
-            } else {
-                header.classList.remove('is-scrolled');
-            }
-        }, { passive: true });
-    }
+
 
     /* ==============================
        2. ЛОГИКА КВИЗ-КАЛЬКУЛЯТОРА
