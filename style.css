@@ -50,6 +50,7 @@
 
 html {
     scroll-behavior: smooth;
+    overscroll-behavior: none;
 }
 
 body {
@@ -59,6 +60,9 @@ body {
     color: var(--color-dark-gray);
     background-color: var(--color-white);
     -webkit-font-smoothing: antialiased;
+    overscroll-behavior: none;
+    padding-top: 73px;
+    /* Компенсация fixed шапки */
 }
 
 a {
@@ -209,10 +213,12 @@ p {
 .header {
     padding: var(--spacing-md) 0;
     border-bottom: 1px solid var(--color-border);
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     background-color: #FFFFFF;
-    z-index: 100;
+    z-index: 9999;
     transition: box-shadow 0.3s ease;
 }
 
@@ -464,7 +470,7 @@ p {
     display: flex;
     gap: var(--spacing-md);
     overflow-x: auto;
-    
+
     padding-bottom: var(--spacing-xl);
     /* for shadow & scrollbar */
     -ms-overflow-style: none;
