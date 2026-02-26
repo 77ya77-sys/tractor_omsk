@@ -444,66 +444,6 @@ p {
         0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-/* Trust Strip (Светлая полоса между Hero и Квизом) */
-.trust-strip {
-    background: #F9F9F9;
-    padding-top: 15px !important;
-    padding-bottom: 15px !important;
-    border-bottom: 1px solid #EEEEEE;
-}
-
-.trust-strip__label {
-    color: #999;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 10px !important;
-    text-align: center;
-    font-weight: 500;
-}
-
-.trust-strip__logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    flex-wrap: wrap;
-}
-
-.trust-strip__logo {
-    color: #333;
-    font-size: 1.125rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    opacity: 0.35;
-    filter: grayscale(100%);
-    transition: all 0.3s ease;
-    cursor: default;
-    white-space: nowrap;
-}
-
-.trust-strip__logo:hover {
-    filter: grayscale(0%);
-    opacity: 1;
-    transform: scale(1.05);
-    color: #1a1a1a;
-}
-
-@media (max-width: 768px) {
-    .trust-strip {
-        padding: 28px 0;
-    }
-
-    .trust-strip__logos {
-        gap: 24px 40px;
-    }
-
-    .trust-strip__logo {
-        font-size: 0.875rem;
-    }
-}
-
 /* Section Header */
 .section__header {
     text-align: center;
@@ -836,15 +776,51 @@ p {
 }
 
 .fact-item__lbl {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Trust Logos inside Facts Section */
+.facts-trust {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.facts-trust__label {
+    font-size: 13px;
+    color: #888;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-weight: 500;
+}
+
+.facts-trust__logos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    color: #ffffff;
+    opacity: 0.4;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.facts-trust__logos span {
+    transition: opacity 0.3s ease;
+    cursor: default;
+}
+
+.facts-trust__logos span:hover {
+    opacity: 1;
 }
 
 /* Quiz UI */
 .quiz-section {
-    padding-top: 0;
-    position: relative;
-    z-index: 5;
+    margin-top: -80px !important;
+    position: relative !important;
+    z-index: 10 !important;
     background-color: transparent;
     scroll-margin-top: 100px;
 }
