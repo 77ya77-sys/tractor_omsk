@@ -263,8 +263,8 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     color: #fff;
     transition: transform 0.2s ease, opacity 0.2s ease;
@@ -1367,8 +1367,6 @@ p {
     grid-template-columns: 1fr;
     gap: 30px;
     margin-bottom: 40px;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
 }
 
 .footer__logo {
