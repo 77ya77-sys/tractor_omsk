@@ -309,7 +309,7 @@ p {
     font-size: 0.875rem;
     font-weight: 600;
     border-radius: 4px;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: 24px !important;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
@@ -336,26 +336,26 @@ p {
 .hero--industrial .hero__title {
     color: var(--color-white);
     max-width: 800px;
+    margin-bottom: 24px !important;
 }
 
 .hero--industrial .hero__subtitle {
     color: rgba(255, 255, 255, 0.7);
     max-width: 650px;
     font-size: 1.125rem;
-    margin-bottom: 0;
+    margin-bottom: 40px !important;
 }
 
 .hero--industrial .hero__content {
     display: flex;
     flex-direction: column;
-    gap: 32px;
 }
 
 .metrics {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
-    margin-bottom: 0;
+    margin-bottom: 50px !important;
 }
 
 .metric {
