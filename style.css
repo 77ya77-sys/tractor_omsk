@@ -1650,10 +1650,6 @@ section.facts.hero--industrial {
     .step__desc {
         font-size: 12px !important;
         line-height: 1.4 !important;
-        display: -webkit-box !important;
-        -webkit-line-clamp: 2 !important;
-        -webkit-box-orient: vertical !important;
-        overflow: hidden !important;
     }
 
     /* 7. БЛОК «МЫ СОБСТВЕННИКИ» — сетка 2x2 одинаковые */
