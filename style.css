@@ -304,8 +304,10 @@ p {
 
 /* Badge */
 .badge {
-    display: inline-block;
-    padding: 6px 14px;
+    display: inline-block !important;
+    width: fit-content !important;
+    max-width: max-content !important;
+    padding: 6px 16px !important;
     font-size: 0.875rem;
     font-weight: 600;
     border-radius: 4px;
@@ -445,7 +447,8 @@ p {
 /* Trust Strip (Светлая полоса между Hero и Квизом) */
 .trust-strip {
     background: #F9F9F9;
-    padding: 20px 0;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
     border-bottom: 1px solid #EEEEEE;
 }
 
@@ -454,7 +457,7 @@ p {
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 12px;
+    margin-bottom: 10px !important;
     text-align: center;
     font-weight: 500;
 }
