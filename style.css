@@ -819,7 +819,7 @@ p {
 
 /* Quiz UI */
 .quiz-section {
-    margin-top: -188px !important;
+    margin-top: -100px !important;
     position: relative !important;
     z-index: 10 !important;
     background-color: transparent;
