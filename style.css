@@ -1375,7 +1375,6 @@ p {
 
 .footer__col {
     min-width: 0;
-    overflow: hidden;
 }
 
 .footer__logo {
@@ -1471,8 +1470,17 @@ p {
     }
 
     .footer__inner {
-        grid-template-columns: 1.5fr 1fr 1fr 1fr;
-        gap: 40px;
+        display: flex;
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .footer__col:first-child {
+        flex: 0 1 280px;
+    }
+
+    .footer__col:not(:first-child) {
+        flex: 0 0 auto;
     }
 }
 
