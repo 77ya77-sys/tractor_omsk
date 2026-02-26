@@ -1539,9 +1539,9 @@ section.facts.hero--industrial {
         padding-bottom: 50px !important;
     }
 
-    /* Hero — уменьшенный нижний padding для мобильного нахлёста */
+    /* Hero — увеличенный верхний padding для "воздуха", компактный нижний для нахлёста */
     section.hero.hero--industrial {
-        padding-top: 40px !important;
+        padding-top: 120px !important;
         padding-bottom: 100px !important;
     }
 
@@ -1648,11 +1648,19 @@ section.facts.hero--industrial {
     }
 
     /* 13. ШАПКА — компактная мобильная */
+    .header {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+
     .header__inner {
-        padding: 10px 0 !important;
+        display: flex !important;
+        flex-direction: row !important;
         flex-wrap: wrap !important;
         justify-content: space-between !important;
-        gap: 8px !important;
+        align-items: center !important;
+        row-gap: 12px !important;
+        padding: 0 !important;
     }
 
     /* Скрываем часы работы на мобилке */
@@ -1662,21 +1670,31 @@ section.facts.hero--industrial {
 
     /* Логотип — компактный */
     .logo__text {
-        font-size: 18px !important;
+        font-size: 16px !important;
+        font-weight: 800 !important;
+    }
+
+    /* Правый блок — контакты в линию */
+    .header__contact-group {
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
     }
 
     .header__phone {
-        font-size: 16px !important;
+        font-size: 15px !important;
+        font-weight: bold !important;
     }
 
     .header__messengers a {
-        width: 30px !important;
-        height: 30px !important;
+        width: 28px !important;
+        height: 28px !important;
+        margin: 0 !important;
     }
 
     .header__messengers a svg {
-        width: 20px !important;
-        height: 20px !important;
+        width: 18px !important;
+        height: 18px !important;
     }
 
     /* 14. КАТАЛОГ — ТАБЫ */
