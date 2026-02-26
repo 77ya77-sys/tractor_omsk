@@ -1584,22 +1584,30 @@ section.facts.hero--industrial {
         text-align: center !important;
     }
 
-    /* 6. КВИЗ — карточки в 1 колонку, компактные */
-    .quiz__options.grid-2 {
-        grid-template-columns: 1fr !important;
-        gap: 10px !important;
-    }
-
+    /* 6. КВИЗ — карточки компактные */
+    .quiz__options.grid-2,
     .quiz__options.grid-3 {
         grid-template-columns: 1fr !important;
-        gap: 10px !important;
+        gap: 8px !important;
     }
 
     .quiz__option--card {
-        padding-top: 15px !important;
-        padding-bottom: 15px !important;
+        padding: 10px 14px !important;
         min-height: auto !important;
         height: auto !important;
+        flex-direction: row !important;
+        gap: 10px !important;
+        justify-content: flex-start !important;
+        text-align: left !important;
+    }
+
+    .quiz__option--card .quiz__option-icon {
+        font-size: 24px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .quiz__option--card .quiz__option-text {
+        font-size: 14px !important;
     }
 
     .quiz-card {
@@ -1609,11 +1617,53 @@ section.facts.hero--industrial {
         border-radius: 16px !important;
     }
 
-    /* 7. БЛОК «МЫ СОБСТВЕННИКИ» — цифры в сетку 2x2 */
+    /* ШАГИ «ПО РЕГЛАМЕНТУ» — горизонтальная раскладка */
+    .steps {
+        gap: 12px !important;
+    }
+
+    .step {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+        padding: 16px !important;
+    }
+
+    .step__num {
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+        font-size: 1rem !important;
+        margin-bottom: 0 !important;
+    }
+
+    .step__title {
+        font-size: 15px !important;
+        margin-bottom: 4px !important;
+    }
+
+    .step__desc {
+        font-size: 13px !important;
+    }
+
+    /* 7. БЛОК «МЫ СОБСТВЕННИКИ» — сетка 2x2 одинаковые */
     .fact-grid {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
-        gap: 15px !important;
+        gap: 12px !important;
+    }
+
+    .fact-item {
+        padding: 16px 10px !important;
+    }
+
+    .fact-item__val {
+        font-size: 2rem !important;
+    }
+
+    .fact-item__lbl {
+        font-size: 0.75rem !important;
     }
 
     /* 8. ЛОГОТИПЫ «НАМ ДОВЕРЯЮТ» */
@@ -1656,10 +1706,12 @@ section.facts.hero--industrial {
         font-size: 22px !important;
     }
 
-    /* 13. ШАПКА — компактная мобильная */
+    /* 13. ШАПКА — компактная, строго в одну строку */
     .header {
-        padding-top: 10px !important;
-        padding-bottom: 10px !important;
+        padding: 8px 0 !important;
+    }
+
+    .header .container {
         padding-left: 15px !important;
         padding-right: 15px !important;
     }
@@ -1667,56 +1719,71 @@ section.facts.hero--industrial {
     .header__inner {
         display: flex !important;
         flex-direction: row !important;
-        flex-wrap: wrap !important;
+        flex-wrap: nowrap !important;
         justify-content: space-between !important;
         align-items: center !important;
-        row-gap: 12px !important;
+        gap: 6px !important;
         padding: 0 !important;
     }
 
-    /* Скрываем часы работы на мобилке */
     .header__work-hours {
         display: none !important;
     }
 
-    /* Логотип — компактный */
-    .logo__text {
-        font-size: 16px !important;
-        font-weight: 800 !important;
+    .header__logo {
+        flex-shrink: 1 !important;
+        min-width: 0 !important;
     }
 
-    /* Правый блок — контакты в линию */
+    .logo__text {
+        font-size: 14px !important;
+        font-weight: 800 !important;
+        white-space: nowrap !important;
+    }
+
     .header__contact-group {
         display: flex !important;
         align-items: center !important;
-        gap: 12px !important;
+        gap: 6px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .header__contacts-text {
+        flex-direction: row !important;
     }
 
     .header__phone {
-        font-size: 15px !important;
+        font-size: 13px !important;
         font-weight: bold !important;
+        white-space: nowrap !important;
+    }
+
+    .header__messengers {
+        display: flex !important;
+        gap: 4px !important;
     }
 
     .header__messengers a {
-        width: 28px !important;
-        height: 28px !important;
+        width: 26px !important;
+        height: 26px !important;
         margin: 0 !important;
     }
 
     .header__messengers a svg {
-        width: 18px !important;
-        height: 18px !important;
+        width: 16px !important;
+        height: 16px !important;
     }
 
     /* 14. КАТАЛОГ — ТАБЫ */
     .fleet__tabs {
         flex-wrap: wrap !important;
+        justify-content: center !important;
         gap: 6px !important;
     }
 
     .tab-btn {
-        font-size: 0.85rem !important;
-        padding: 8px 14px !important;
+        font-size: 0.8rem !important;
+        padding: 6px 12px !important;
     }
 
     /* 15. Hero subtitle */
