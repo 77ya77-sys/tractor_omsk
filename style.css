@@ -1497,3 +1497,189 @@ section.facts.hero--industrial {
         grid-template-columns: repeat(4, 1fr);
     }
 }
+
+/* ============================================================
+   МОБИЛЬНАЯ АДАПТАЦИЯ — СТРОГО max-width: 768px
+   Десктопная версия НЕ затрагивается.
+   ============================================================ */
+@media (max-width: 768px) {
+
+    /* 1. БЛОКИРОВКА ГОРИЗОНТАЛЬНОГО СКРОЛЛА */
+    html,
+    body {
+        overflow-x: hidden !important;
+        width: 100vw !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* 2. КОНТЕЙНЕР — ЦЕНТРИРОВАНИЕ */
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        box-sizing: border-box !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        overflow: hidden !important;
+    }
+
+    /* 3. АДАПТАЦИЯ ШРИФТОВ */
+    h1 {
+        font-size: 28px !important;
+        line-height: 1.2 !important;
+    }
+
+    h2 {
+        font-size: 24px !important;
+        line-height: 1.3 !important;
+    }
+
+    /* 4. ОТСТУПЫ СЕКЦИЙ (компактный мобильный ритм) */
+    .section {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+    }
+
+    /* Hero — уменьшенный нижний padding для мобильного нахлёста */
+    section.hero.hero--industrial {
+        padding-top: 40px !important;
+        padding-bottom: 100px !important;
+    }
+
+    /* Секция «Мы собственники»: мобильный ритм */
+    section.facts.hero--industrial {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+    }
+
+    /* Квиз — мобильный нахлёст */
+    .quiz-section {
+        margin-top: -50px !important;
+    }
+
+    /* 5. КАРТОЧКИ HERO (14 машин, от 2 часов) — сетка 2x2 */
+    .metrics {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
+        margin-bottom: 30px !important;
+    }
+
+    .metric {
+        padding: 12px !important;
+    }
+
+    .metric__value {
+        font-size: 1.1rem !important;
+    }
+
+    .metric__label {
+        font-size: 0.75rem !important;
+    }
+
+    /* Кнопка CTA — адаптивная */
+    .btn--hero-cta {
+        padding: 16px 32px !important;
+        font-size: 1rem !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    /* 6. КВИЗ — карточки в 1 колонку */
+    .quiz__options.grid-2 {
+        grid-template-columns: 1fr !important;
+    }
+
+    .quiz__options.grid-3 {
+        grid-template-columns: 1fr !important;
+    }
+
+    .quiz-card {
+        padding: 24px 16px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        border-radius: 16px !important;
+    }
+
+    /* 7. БЛОК «МЫ СОБСТВЕННИКИ» — цифры в сетку 2x2 */
+    .fact-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 15px !important;
+    }
+
+    /* 8. ЛОГОТИПЫ «НАМ ДОВЕРЯЮТ» */
+    .facts-trust__logos {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 15px !important;
+    }
+
+    .facts-trust__logos span {
+        font-size: 0.8rem !important;
+    }
+
+    /* 9. ПОДВАЛ — 1 колонка */
+    .footer__inner {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+
+    /* 10. КАТАЛОГ ТЕХНИК — карточки в 1 колонку */
+    .fleet__grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* 11. FAQ — компактнее */
+    .faq__item-question {
+        font-size: 1rem !important;
+        padding: 14px 0 !important;
+    }
+
+    /* 12. CTA-блок внизу */
+    .simple-lead-card {
+        padding: 30px 20px !important;
+        border-radius: 16px !important;
+    }
+
+    .simple-lead-card h2 {
+        font-size: 22px !important;
+    }
+
+    /* 13. ШАПКА — компактная мобильная */
+    .header__inner {
+        padding: 10px 0 !important;
+    }
+
+    .header__phone {
+        font-size: 1rem !important;
+    }
+
+    .header__messengers a {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    /* 14. КАТАЛОГ — ТАБЫ */
+    .fleet__tabs {
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+    }
+
+    .tab-btn {
+        font-size: 0.85rem !important;
+        padding: 8px 14px !important;
+    }
+
+    /* 15. Hero subtitle */
+    .hero--industrial .hero__subtitle {
+        font-size: 1rem !important;
+        margin-bottom: 24px !important;
+    }
+
+}
