@@ -340,7 +340,7 @@ p {
 /* Hero-экран: увеличенный нижний padding для нахлёста квиза */
 section.hero.hero--industrial {
     padding-top: 64px !important;
-    padding-bottom: 120px !important;
+    padding-bottom: 200px !important;
 }
 
 /* Секция "Мы собственники": стандартный ритм 80/80 */
@@ -370,8 +370,8 @@ section.facts.hero--industrial {
 .metrics {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-md);
-    margin-bottom: 40px !important;
+    gap: 16px;
+    margin-bottom: 50px !important;
 }
 
 .metric {
@@ -425,6 +425,7 @@ section.facts.hero--industrial {
     position: relative;
     overflow: hidden;
     margin-bottom: 0 !important;
+    margin-top: 0 !important;
 }
 
 @keyframes btn-shine {
@@ -834,7 +835,7 @@ section.facts.hero--industrial {
 
 /* Quiz UI */
 .quiz-section {
-    margin-top: -56px !important;
+    margin-top: -150px !important;
     position: relative !important;
     z-index: 10 !important;
     background-color: transparent;
