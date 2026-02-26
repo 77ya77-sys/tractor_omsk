@@ -1355,28 +1355,28 @@ p {
 .footer {
     background-color: #111;
     color: var(--color-gray);
-    padding: var(--spacing-xxxl) 0 var(--spacing-lg);
+    padding: 60px 0 30px;
 }
 
 .footer__inner {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-xl);
+    gap: 30px;
+    margin-bottom: 40px;
 }
 
 .footer__logo {
     font-size: 1.5rem;
     font-weight: 800;
     color: var(--color-white);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 12px;
     text-transform: uppercase;
 }
 
 .footer__title {
     color: var(--color-white);
     font-size: 1rem;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 12px;
 }
 
 .footer__links li,
@@ -1391,7 +1391,7 @@ p {
 
 .footer__bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: var(--spacing-lg);
+    padding-top: 30px;
     text-align: center;
     font-size: 0.875rem;
 }
@@ -1458,7 +1458,8 @@ p {
     }
 
     .footer__inner {
-        grid-template-columns: 2fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
     }
 }
 
