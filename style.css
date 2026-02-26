@@ -263,8 +263,8 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     color: #fff;
     transition: transform 0.2s ease, opacity 0.2s ease;
@@ -463,6 +463,8 @@ p {
     opacity: 0.75;
     transition: opacity 0.2s ease;
     flex-shrink: 0;
+    width: 120px;
+    height: 36px;
 }
 
 .hero-trust__logo-svg:hover {
@@ -1367,6 +1369,11 @@ p {
     grid-template-columns: 1fr;
     gap: 30px;
     margin-bottom: 40px;
+}
+
+.footer__col {
+    min-width: 0;
+    overflow: hidden;
 }
 
 .footer__logo {
