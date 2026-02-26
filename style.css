@@ -342,14 +342,20 @@ p {
     color: rgba(255, 255, 255, 0.7);
     max-width: 650px;
     font-size: 1.125rem;
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: 0;
+}
+
+.hero--industrial .hero__content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 }
 
 .metrics {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: 0;
 }
 
 .metric {
@@ -439,7 +445,7 @@ p {
 /* Trust Strip (Светлая полоса между Hero и Квизом) */
 .trust-strip {
     background: #F9F9F9;
-    padding: 40px 0;
+    padding: 20px 0;
     border-bottom: 1px solid #EEEEEE;
 }
 
@@ -448,7 +454,7 @@ p {
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     text-align: center;
     font-weight: 500;
 }
@@ -469,13 +475,16 @@ p {
     letter-spacing: 0.5px;
     opacity: 0.35;
     filter: grayscale(100%);
-    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
     cursor: default;
     white-space: nowrap;
 }
 
 .trust-strip__logo:hover {
-    opacity: 0.7;
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
+    color: #1a1a1a;
 }
 
 @media (max-width: 768px) {
@@ -830,14 +839,11 @@ p {
 
 /* Quiz UI */
 .quiz-section {
-    margin-top: -60px;
-    /* Overlap hero slightly */
     padding-top: 0;
     position: relative;
     z-index: 5;
     background-color: transparent;
     scroll-margin-top: 100px;
-    /* Compesnate for fixed header natively */
 }
 
 .quiz-card {
