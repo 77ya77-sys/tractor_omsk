@@ -1508,6 +1508,8 @@ section.facts.hero--industrial {
     html,
     body {
         overflow-x: hidden !important;
+        overflow-y: auto !important;
+        height: auto !important;
         width: 100vw !important;
         max-width: 100% !important;
         margin: 0 !important;
@@ -1523,7 +1525,7 @@ section.facts.hero--industrial {
         box-sizing: border-box !important;
         margin-left: auto !important;
         margin-right: auto !important;
-        overflow: hidden !important;
+        overflow: visible !important;
     }
 
     /* 3. АДАПТАЦИЯ ШРИФТОВ */
@@ -1654,15 +1656,33 @@ section.facts.hero--industrial {
     /* 13. ШАПКА — компактная мобильная */
     .header__inner {
         padding: 10px 0 !important;
+        flex-wrap: wrap !important;
+        justify-content: space-between !important;
+        gap: 8px !important;
+    }
+
+    /* Скрываем часы работы на мобилке */
+    .header__work-hours {
+        display: none !important;
+    }
+
+    /* Логотип — компактный */
+    .logo__text {
+        font-size: 18px !important;
     }
 
     .header__phone {
-        font-size: 1rem !important;
+        font-size: 16px !important;
     }
 
     .header__messengers a {
-        width: 32px !important;
-        height: 32px !important;
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .header__messengers a svg {
+        width: 20px !important;
+        height: 20px !important;
     }
 
     /* 14. КАТАЛОГ — ТАБЫ */
