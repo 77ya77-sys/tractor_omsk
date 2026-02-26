@@ -290,8 +290,7 @@ p {
     color: var(--color-dark);
     letter-spacing: -0.3px;
     white-space: nowrap;
-    line-height: 1.1;
-    margin-bottom: 2px;
+    line-height: 1.2;
 }
 
 .header__work-hours {
@@ -460,16 +459,13 @@ p {
     justify-content: center;
 }
 
-.hero-trust__logo {
-    font-size: 1rem;
-    font-weight: 900;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    opacity: 0.85;
+.hero-trust__logo-svg {
+    opacity: 0.75;
     transition: opacity 0.2s ease;
+    flex-shrink: 0;
 }
 
-.hero-trust__logo:hover {
+.hero-trust__logo-svg:hover {
     opacity: 1;
 }
 
@@ -481,10 +477,12 @@ p {
 
     .hero-trust__logos {
         gap: 16px;
+        flex-wrap: wrap;
     }
 
-    .hero-trust__logo {
-        font-size: 0.875rem;
+    .hero-trust__logo-svg {
+        width: auto;
+        height: 28px;
     }
 }
 
@@ -1369,6 +1367,8 @@ p {
     grid-template-columns: 1fr;
     gap: 30px;
     margin-bottom: 40px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 .footer__logo {
