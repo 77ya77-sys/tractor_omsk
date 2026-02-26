@@ -358,7 +358,7 @@ p {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
-    margin-bottom: 50px !important;
+    margin-bottom: 40px !important;
 }
 
 .metric {
@@ -411,6 +411,7 @@ p {
         0 2px 8px rgba(0, 0, 0, 0.2);
     position: relative;
     overflow: hidden;
+    margin-bottom: 0 !important;
 }
 
 @keyframes btn-shine {
@@ -819,7 +820,7 @@ p {
 
 /* Quiz UI */
 .quiz-section {
-    margin-top: -100px !important;
+    margin-top: -56px !important;
     position: relative !important;
     z-index: 10 !important;
     background-color: transparent;
