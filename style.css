@@ -51,6 +51,7 @@
 html {
     scroll-behavior: smooth;
     overscroll-behavior: none;
+    scroll-padding-top: 100px;
 }
 
 body {
@@ -94,7 +95,7 @@ ul {
 }
 
 .section {
-    padding: var(--spacing-xxxl) 0;
+    padding: 80px 0;
 }
 
 .bg-light {
@@ -818,7 +819,7 @@ p {
 
 /* Quiz UI */
 .quiz-section {
-    margin-top: -80px !important;
+    margin-top: -188px !important;
     position: relative !important;
     z-index: 10 !important;
     background-color: transparent;
@@ -1244,7 +1245,7 @@ p {
    FAQ Block
 ----------------------------- */
 .faq-section {
-    padding: var(--spacing-xxl) 0;
+    padding: 80px 0 !important;
 }
 
 .faq-list {
@@ -1302,7 +1303,11 @@ p {
    Simple Lead Form
 ----------------------------- */
 .cta-section {
-    padding: var(--spacing-xxl) 0 var(--spacing-xxxl);
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .simple-lead-card {
