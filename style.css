@@ -839,7 +839,6 @@ section.facts.hero--industrial {
     position: relative !important;
     z-index: 10 !important;
     background-color: transparent;
-    scroll-margin-top: 50px !important;
 }
 
 .quiz-card {

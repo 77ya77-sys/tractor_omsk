@@ -380,4 +380,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    /* ==============================
+       7. ЦЕНТРИРОВАНИЕ КВИЗА ПРИ СКРОЛЛЕ
+       ============================== */
+    document.querySelectorAll('a[href="#quiz-section"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const quizCard = document.querySelector('#quiz-section .quiz-card');
+            if (quizCard) {
+                quizCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+    });
 });
