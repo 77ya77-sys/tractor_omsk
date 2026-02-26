@@ -95,7 +95,8 @@ ul {
 }
 
 .section {
-    padding: 80px 0;
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
 }
 
 .bg-light {
@@ -130,6 +131,7 @@ h1 {
 
 h2 {
     font-size: 2rem;
+    margin-top: 0;
     margin-bottom: var(--spacing-sm);
     letter-spacing: -0.01em;
 }
@@ -324,7 +326,6 @@ p {
 
 /* Hero Section (Industrial) — фото-подложка + темный overlay */
 .hero--industrial {
-    padding: var(--spacing-xxxl) 0 calc(var(--spacing-xxxl) * 1.5);
     background-color: var(--color-dark);
     background-image:
         linear-gradient(rgba(20, 20, 20, 0.82), rgba(15, 15, 15, 0.92)),
@@ -334,6 +335,18 @@ p {
     background-repeat: no-repeat;
     color: var(--color-white);
     position: relative;
+}
+
+/* Hero-экран: увеличенный нижний padding для нахлёста квиза */
+section.hero.hero--industrial {
+    padding-top: 64px !important;
+    padding-bottom: 120px !important;
+}
+
+/* Секция "Мы собственники": стандартный ритм 80/80 */
+section.facts.hero--industrial {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
 }
 
 .hero--industrial .hero__title {
@@ -785,6 +798,7 @@ p {
 /* Trust Logos inside Facts Section */
 .facts-trust {
     margin-top: 60px;
+    margin-bottom: 0;
     text-align: center;
 }
 
@@ -1246,7 +1260,8 @@ p {
    FAQ Block
 ----------------------------- */
 .faq-section {
-    padding: 80px 0 !important;
+    /* padding наследуется от .section (80px/80px) */
+    box-sizing: border-box;
 }
 
 .faq-list {
