@@ -23,14 +23,14 @@
             </div>
             <div class="header__contact-group">
                 <div class="header__messengers">
-                    <a href="https://t.me/USERNAME?text=Здравствуйте,%20нужна%20техника%20в%20аренду.%20Рассчитайте%20стоимость"
+                    <a href="https://t.me/USERNAME?text=Здравствуйте,%20нужна%20техника%20в%20аренду.%20Рассчитайте%20стоимость" aria-label="Написать в Telegram"
                         target="_blank" class="messenger-link messenger-link--tg" title="Написать в Telegram">
                         <svg viewBox="0 0 24 24" width="28" height="28">
                             <path fill="currentColor"
                                 d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
                         </svg>
                     </a>
-                    <a href="https://wa.me/70000000000?text=Здравствуйте,%20нужна%20техника%20в%20аренду.%20Рассчитайте%20стоимость"
+                    <a href="https://wa.me/70000000000?text=Здравствуйте,%20нужна%20техника%20в%20аренду.%20Рассчитайте%20стоимость" aria-label="Написать в WhatsApp"
                         target="_blank" class="messenger-link messenger-link--wa" title="Написать в WhatsApp">
                         <svg viewBox="0 0 24 24" width="28" height="28">
                             <path fill="currentColor"
@@ -39,7 +39,7 @@
                     </a>
                 </div>
                 <div class="header__contacts-text">
-                    <a href="tel:+73812000000" class="header__phone">+7 (3812) 00-00-00</a>
+                    <a href="tel:+73812000000" class="header__phone">+7&nbsp;(3812)&nbsp;00&#8209;00&#8209;00</a>
                     <span class="header__work-hours">8:00-23:00 Без выходных</span>
                 </div>
             </div>
@@ -105,7 +105,7 @@
                     <div class="quiz" id="quiz-app">
                         <!-- Прогресс -->
                         <div class="quiz__progress-bar">
-                            <div class="quiz__progress-fill" id="quiz-progress-fill" style="width: 25%;"></div>
+                            <div class="quiz__progress-fill" id="quiz-progress-fill"></div>
                         </div>
                         <div class="quiz__steps-indicator" id="quiz-step-text">Шаг 1 из 4</div>
 
@@ -208,19 +208,21 @@
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-block btn--large">Получить расчет
                                     стоимости</button>
-                                <div class="form-policy">Оставляя заявку, вы соглашаетесь с <a href="#">политикой
-                                        конфиденциальности</a>.</div>
+                                <label class="form-policy checkbox-label">
+                                    <input type="checkbox" name="agree" required>
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">Я согласен с <a href="privacy.html" target="_blank">политикой конфиденциальности</a></span>
+                                </label>
                             </div>
 
                             <!-- Навигация квиза -->
                             <div class="quiz__actions" id="quiz-actions">
-                                <button type="button" class="btn btn-outline" id="quiz-prev"
-                                    style="display: none;">Назад</button>
+                                <button type="button" class="btn btn-outline d-none" id="quiz-prev">Назад</button>
                                 <button type="button" class="btn btn-primary" id="quiz-next" disabled>Далее</button>
                             </div>
 
                             <!-- Сообщение об успехе -->
-                            <div class="quiz__success" id="quiz-success" style="display: none;">
+                            <div class="quiz__success d-none" id="quiz-success">
                                 <div class="success-icon">✅</div>
                                 <h3>Заявка принята!</h3>
                                 <p>Инженер уже приступил к расчету. Ожидайте звонка в течение 5 минут с номера +7 (3812)
@@ -244,21 +246,22 @@
 
 
 
+
                 <!-- Фильтры -->
                 <div class="fleet__filters">
                     <!-- Ряд 1: Тип техники -->
                     <div class="fleet__tabs fleet__tabs--types" id="fleet-tabs-type">
-                        <button class="tab-btn active" data-type="all">Вся техника</button>
-                        <button class="tab-btn" data-type="excavators">Экскаваторы</button>
-                        <button class="tab-btn" data-type="loaders">Погрузчики</button>
-                        <button class="tab-btn" data-type="dump_trucks">Самосвалы</button>
-                        <button class="tab-btn" data-type="manipulators">Манипуляторы</button>
-                        <button class="tab-btn" data-type="tractors">Тракторы</button>
+                        <button type="button" class="tab-btn active" data-type="all">Вся техника</button>
+                        <button type="button" class="tab-btn" data-type="excavators">Экскаваторы</button>
+                        <button type="button" class="tab-btn" data-type="loaders">Погрузчики</button>
+                        <button type="button" class="tab-btn" data-type="dump_trucks">Самосвалы</button>
+                        <button type="button" class="tab-btn" data-type="manipulators">Манипуляторы</button>
+                        <button type="button" class="tab-btn" data-type="tractors">Тракторы</button>
                     </div>
                 </div>
 
                 <div class="carousel-wrapper">
-                    <button class="carousel-btn carousel-btn--prev" id="carousel-prev"
+                    <button type="button" class="carousel-btn carousel-btn--prev" id="carousel-prev"
                         aria-label="Предыдущие">◀</button>
                     <div class="carousel-track" id="fleet-track">
                         <!-- 1. JCB 3CX -->
@@ -275,7 +278,7 @@
                             <div class="card__content card__content--minimal">
                                 <h3 class="card__title">Экскаватор-погрузчик JCB 3CX</h3>
                                 <div class="card__price">от 2 800 ₽/ч</div>
-                                <button class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
+                                <button type="button" class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
                             </div>
                         </article>
 
@@ -293,7 +296,7 @@
                             <div class="card__content card__content--minimal">
                                 <h3 class="card__title">Экскаватор-погрузчик CAT 428F</h3>
                                 <div class="card__price">от 2 900 ₽/ч</div>
-                                <button class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
+                                <button type="button" class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
                             </div>
                         </article>
 
@@ -311,7 +314,7 @@
                             <div class="card__content card__content--minimal">
                                 <h3 class="card__title">Фронтальный погрузчик XCMG</h3>
                                 <div class="card__price">от 2 600 ₽/ч</div>
-                                <button class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
+                                <button type="button" class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
                             </div>
                         </article>
 
@@ -329,7 +332,7 @@
                             <div class="card__content card__content--minimal">
                                 <h3 class="card__title">Мини-погрузчик Bobcat S530</h3>
                                 <div class="card__price">от 2 400 ₽/ч</div>
-                                <button class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
+                                <button type="button" class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
                             </div>
                         </article>
 
@@ -347,7 +350,7 @@
                             <div class="card__content card__content--minimal">
                                 <h3 class="card__title">Гусеничный экскаватор Doosan (22 т)</h3>
                                 <div class="card__price">от 3 500 ₽/ч</div>
-                                <button class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
+                                <button type="button" class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
                             </div>
                         </article>
 
@@ -365,7 +368,7 @@
                             <div class="card__content card__content--minimal">
                                 <h3 class="card__title">Гусеничный экскаватор Hitachi 330</h3>
                                 <div class="card__price">от 4 200 ₽/ч</div>
-                                <button class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
+                                <button type="button" class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
                             </div>
                         </article>
 
@@ -383,7 +386,7 @@
                             <div class="card__content card__content--minimal">
                                 <h3 class="card__title">Колесный экскаватор Hyundai 140w</h3>
                                 <div class="card__price">от 3 300 ₽/ч</div>
-                                <button class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
+                                <button type="button" class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
                             </div>
                         </article>
 
@@ -402,7 +405,7 @@
                             <div class="card__content card__content--minimal">
                                 <h3 class="card__title">Самосвал КАМАЗ 65115 (15 т)</h3>
                                 <div class="card__price">от 2 000 ₽/ч</div>
-                                <button class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
+                                <button type="button" class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
                             </div>
                         </article>
 
@@ -420,7 +423,7 @@
                             <div class="card__content card__content--minimal">
                                 <h3 class="card__title">Самосвал КАМАЗ 6520 (20 т)</h3>
                                 <div class="card__price">от 2 200 ₽/ч</div>
-                                <button class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
+                                <button type="button" class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
                             </div>
                         </article>
 
@@ -438,7 +441,7 @@
                             <div class="card__content card__content--minimal">
                                 <h3 class="card__title">Самосвал Shacman (25 т)</h3>
                                 <div class="card__price">от 2 500 ₽/ч</div>
-                                <button class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
+                                <button type="button" class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
                             </div>
                         </article>
 
@@ -456,7 +459,7 @@
                             <div class="card__content card__content--minimal">
                                 <h3 class="card__title">КМУ Isuzu (Борт 5т / Стрела 3т)</h3>
                                 <div class="card__price">от 2 300 ₽/ч</div>
-                                <button class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
+                                <button type="button" class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
                             </div>
                         </article>
 
@@ -474,7 +477,7 @@
                             <div class="card__content card__content--minimal">
                                 <h3 class="card__title">КМУ КАМАЗ 43118 (Вездеход)</h3>
                                 <div class="card__price">от 3 000 ₽/ч</div>
-                                <button class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
+                                <button type="button" class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
                             </div>
                         </article>
 
@@ -492,7 +495,7 @@
                             <div class="card__content card__content--minimal">
                                 <h3 class="card__title">Колесный трактор МТЗ 82.1</h3>
                                 <div class="card__price">от 2 200 ₽/ч</div>
-                                <button class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
+                                <button type="button" class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
                             </div>
                         </article>
 
@@ -510,12 +513,12 @@
                             <div class="card__content card__content--minimal">
                                 <h3 class="card__title">Мини-экскаватор Kubota (3.5 т)</h3>
                                 <div class="card__price">от 2 500 ₽/ч</div>
-                                <button class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
+                                <button type="button" class="btn btn-primary btn-block btn--small card__cta">Рассчитать</button>
                             </div>
                         </article>
 
                     </div>
-                    <button class="carousel-btn carousel-btn--next" id="carousel-next" aria-label="Следующие">▶</button>
+                    <button type="button" class="carousel-btn carousel-btn--next" id="carousel-next" aria-label="Следующие">▶</button>
                 </div>
 
             </div>
@@ -558,7 +561,7 @@
         <!-- Секция 5: Факты -->
         <section id="facts" class="facts section hero--industrial text-white">
             <div class="container">
-                <h2 class="section__title text-center" style="color: #fff;">Мы не диспетчеры. Мы собственники.</h2>
+                <h2 class="section__title text-center">Мы не диспетчеры. Мы собственники.</h2>
                 <div class="fact-grid">
                     <div class="fact-item">
                         <div class="fact-item__val">14</div>
@@ -597,14 +600,14 @@
                 <h2 class="section__title text-center">Частые вопросы</h2>
                 <div class="faq-list">
                     <div class="faq-item">
-                        <button class="faq-btn">Топливо включено? <span class="faq-icon">+</span></button>
+                        <button type="button" class="faq-btn">Топливо включено? <span class="faq-icon">+</span></button>
                         <div class="faq-content">
                             <p>Да, вся наша техника сдается в аренду с уже включенным топливом (ГСМ) и услугами опытного
                                 оператора. Никаких доплат на объекте.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-btn">Какие способы оплаты? <span class="faq-icon">+</span></button>
+                        <button type="button" class="faq-btn">Какие способы оплаты? <span class="faq-icon">+</span></button>
                         <div class="faq-content">
                             <p>Мы работаем с юридическими лицами (с НДС и без НДС) по безналичному расчету с
                                 предоставлением закрывающих документов (ЭДО). Для физических лиц доступна оплата
@@ -612,14 +615,14 @@
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-btn">Сколько ждать подачу? <span class="faq-icon">+</span></button>
+                        <button type="button" class="faq-btn">Сколько ждать подачу? <span class="faq-icon">+</span></button>
                         <div class="faq-content">
                             <p>Если машина свободна, подача по городу Омск занимает от 2 часов. Для доставки тяжелой
                                 гусеничной техники (габарит/негабарит) мы используем собственный трал.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-btn">Работаете с оператором? <span class="faq-icon">+</span></button>
+                        <button type="button" class="faq-btn">Работаете с оператором? <span class="faq-icon">+</span></button>
                         <div class="faq-content">
                             <p>Вся техника предоставляется исключительно с нашим экипажем. Опыт машинистов позволяет
                                 выполнять ювелирные задачи и работать на сложных грунтах.</p>
@@ -637,10 +640,17 @@
                         <h2>Остались вопросы?</h2>
                         <p>Оставьте номер, обсудим задачу напрямую. Без менеджеров-посредников.</p>
                     </div>
-                    <form class="simple-form" id="bottom-form">
-                        <input type="tel" name="phone_simple" id="bottom-phone" class="form-control"
-                            placeholder="+7 (___) ___-__-__" required>
-                        <button type="submit" class="btn btn-primary">Позвонить мне</button>
+                    <form id="bottom-form" class="bottom-form-container">
+                        <div class="simple-form">
+                            <input type="tel" name="phone_simple" id="bottom-phone" class="form-control"
+                                placeholder="+7 (___) ___-__-__" required>
+                            <button type="submit" class="btn btn-primary">Позвонить мне</button>
+                        </div>
+                        <label class="form-policy checkbox-label checkbox-label--light">
+                            <input type="checkbox" name="agree" required>
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">Я согласен с <a href="privacy.html" target="_blank">политикой конфиденциальности</a></span>
+                        </label>
                     </form>
                 </div>
             </div>
@@ -652,7 +662,7 @@
     <div class="modal" id="equipment-modal">
         <div class="modal__overlay" id="modal-overlay"></div>
         <div class="modal__content">
-            <button class="modal__close" id="modal-close">×</button>
+            <button type="button" class="modal__close" id="modal-close">×</button>
             <div class="modal__body" id="modal-body">
                 <!-- Контент инжектится через JS -->
             </div>
@@ -662,15 +672,14 @@
     <!-- Модальное окно Успешной отправки -->
     <div class="modal" id="success-modal">
         <div class="modal__overlay" id="success-modal-overlay"></div>
-        <div class="modal__content"
-            style="max-width: 440px; text-align: center; border-radius: 12px; padding: 40px 24px; z-index: 999999; top: 50%; left: 50%; transform: translate(-50%, -50%); position: absolute; margin: 0;">
-            <button class="modal__close" id="success-modal-close"
-                style="background: rgba(0,0,0,0.1); color: #1a1a1a;">×</button>
-            <div class="success-icon" style="font-size: 3.5rem; margin-bottom: 24px;">✅</div>
-            <h3 style="font-size: 1.75rem; margin-bottom: 16px; color: var(--color-dark);">Заявка принята!</h3>
-            <p style="font-size: 1rem; color: var(--color-gray); line-height: 1.5; margin-bottom: 0;">Специалист
+        <div class="modal__content modal__content--success">
+            <button type="button" class="modal__close" id="success-modal-close"
+               >×</button>
+            <div class="success-icon">✅</div>
+            <h3>Заявка принята!</h3>
+            <p>Специалист
                 перезвонит вам в течение 5 минут для обсуждения задачи. Ожидайте звонок с нашего прямого номера:
-                <br><br><strong style="color: var(--color-dark); font-size: 1.125rem;">+7 (3812) 00-00-00</strong>
+                <br><br><strong class="success-phone">+7&nbsp;(3812)&nbsp;00&#8209;00&#8209;00</strong>
             </p>
         </div>
     </div>
@@ -695,19 +704,19 @@
                 <div class="footer__col">
                     <h4 class="footer__title">Контакты</h4>
                     <ul class="footer__contacts">
-                        <li>📞 <a href="tel:+73812000000">+7 (3812) 00-00-00</a></li>
+                        <li>📞 <a href="tel:+73812000000">+7&nbsp;(3812)&nbsp;00&#8209;00&#8209;00</a></li>
                         <li>📍 г. Омск, ул. Заводская, 14</li>
                         <li>⏰ Ежедневно 08:00 - 20:00</li>
                     </ul>
-                    <div class="footer__messengers" style="margin-top: 15px; display: flex; gap: 10px;">
-                        <a href="https://t.me/USERNAME?text=Здравствуйте,%20нужна%20техника%20в%20аренду.%20Рассчитайте%20стоимость"
+                    <div class="footer__messengers">
+                        <a href="https://t.me/USERNAME?text=Здравствуйте,%20нужна%20техника%20в%20аренду.%20Рассчитайте%20стоимость" aria-label="Написать в Telegram"
                             target="_blank" class="messenger-link messenger-link--tg" title="Написать в Telegram">
                             <svg viewBox="0 0 24 24" width="28" height="28">
                                 <path fill="currentColor"
                                     d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
                             </svg>
                         </a>
-                        <a href="https://wa.me/70000000000?text=Здравствуйте,%20нужна%20техника%20в%20аренду.%20Рассчитайте%20стоимость"
+                        <a href="https://wa.me/70000000000?text=Здравствуйте,%20нужна%20техника%20в%20аренду.%20Рассчитайте%20стоимость" aria-label="Написать в WhatsApp"
                             target="_blank" class="messenger-link messenger-link--wa" title="Написать в WhatsApp">
                             <svg viewBox="0 0 24 24" width="28" height="28">
                                 <path fill="currentColor"
