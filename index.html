@@ -109,7 +109,7 @@
                         </div>
                         <div class="quiz__steps-indicator" id="quiz-step-text">Шаг 1 из 4</div>
 
-                        <form id="quiz-form">
+                        <form id="quiz-form" novalidate>
                             <!-- Шаг 1 -->
                             <div class="quiz__step active" data-step="1">
                                 <h3 class="quiz__question">Какая задача перед вами стоит?</h3>
@@ -207,11 +207,12 @@
                                         required>
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-block btn--large">Получить расчет
-                                    стоимости</button>
-                                <label class="form-policy checkbox-label">
+                                    стоимость</button>
+                                <label class="form-policy checkbox-label" id="quiz-agree-label">
                                     <input type="checkbox" name="agree" required>
                                     <span class="checkbox-custom"></span>
-                                    <span class="checkbox-text">Я согласен с <a href="privacy.html" target="_blank">политикой конфиденциальности</a></span>
+                                    <span class="checkbox-text">Я согласен с <a href="/privacy/">политикой конфиденциальности</a></span>
+                                    <span class="checkbox-error" id="quiz-agree-error">Поставьте галочку, чтобы подтвердить согласие с политикой конфиденциальности</span>
                                 </label>
                             </div>
 
@@ -225,8 +226,9 @@
                             <div class="quiz__success d-none" id="quiz-success">
                                 <div class="success-icon">✅</div>
                                 <h3>Заявка принята!</h3>
-                                <p>Инженер уже приступил к расчету. Ожидайте звонка в течение 5 минут с номера +7 (3812)
-                                    00-00-00.</p>
+                                <p>Специалист перезвонит вам в течение 5 минут. Ожидайте звонок с нашего прямого номера:
+                                    <br><br><strong class="success-phone">+7&nbsp;(3812)&nbsp;00&#8209;00&#8209;00</strong>
+                                </p>
                             </div>
                         </form>
                     </div>
@@ -640,16 +642,17 @@
                         <h2>Остались вопросы?</h2>
                         <p>Оставьте номер, обсудим задачу напрямую. Без менеджеров-посредников.</p>
                     </div>
-                    <form id="bottom-form" class="bottom-form-container">
+                    <form id="bottom-form" class="bottom-form-container" novalidate>
                         <div class="simple-form">
                             <input type="tel" name="phone_simple" id="bottom-phone" class="form-control"
                                 placeholder="+7 (___) ___-__-__" required>
                             <button type="submit" class="btn btn-primary">Позвонить мне</button>
                         </div>
-                        <label class="form-policy checkbox-label checkbox-label--light">
+                        <label class="form-policy checkbox-label checkbox-label--light" id="bottom-agree-label">
                             <input type="checkbox" name="agree" required>
                             <span class="checkbox-custom"></span>
-                            <span class="checkbox-text">Я согласен с <a href="privacy.html" target="_blank">политикой конфиденциальности</a></span>
+                            <span class="checkbox-text">Я согласен с <a href="/privacy/">политикой конфиденциальности</a></span>
+                            <span class="checkbox-error" id="bottom-agree-error">Поставьте галочку, чтобы подтвердить согласие с политикой конфиденциальности</span>
                         </label>
                     </form>
                 </div>
@@ -678,7 +681,7 @@
             <div class="success-icon">✅</div>
             <h3>Заявка принята!</h3>
             <p>Специалист
-                перезвонит вам в течение 5 минут для обсуждения задачи. Ожидайте звонок с нашего прямого номера:
+                перезвонит вам в течение 5 минут. Ожидайте звонок с нашего прямого номера:
                 <br><br><strong class="success-phone">+7&nbsp;(3812)&nbsp;00&#8209;00&#8209;00</strong>
             </p>
         </div>
@@ -706,7 +709,7 @@
                     <ul class="footer__contacts">
                         <li>📞 <a href="tel:+73812000000">+7&nbsp;(3812)&nbsp;00&#8209;00&#8209;00</a></li>
                         <li>📍 г. Омск, ул. Заводская, 14</li>
-                        <li>⏰ Ежедневно 08:00 - 20:00</li>
+                        <li>⏰ Ежедневно 08:00 - 23:00</li>
                     </ul>
                     <div class="footer__messengers">
                         <a href="https://t.me/USERNAME?text=Здравствуйте,%20нужна%20техника%20в%20аренду.%20Рассчитайте%20стоимость" aria-label="Написать в Telegram"
@@ -735,11 +738,26 @@
             </div>
         </div>
         <div class="container footer__bottom">
-            <p>&copy; 2026 ООО «ОмскСпецТранс». Эталонный проект.</p>
+            <a href="/privacy/" class="footer__privacy-link">Политика конфиденциальности</a>
+            <p class="footer__bottom-text">&copy; 2026 ООО «ОмскСпецТранс». Эталонный проект.</p>
         </div>
     </footer>
 
 
+
+    <!-- Плашка согласия на cookie -->
+    <div class="cookie-banner" id="cookie-banner" aria-hidden="true">
+        <button type="button" class="cookie-banner__close" id="cookie-close" aria-label="Закрыть">×</button>
+        <div class="cookie-banner__inner">
+            <p class="cookie-banner__text cookie-banner__text--desktop cookie-banner__text--mobile">
+                Мы используем файлы cookie для улучшения работы сайта и анализа трафика. Подробнее — в
+                <a href="/privacy/">политике конфиденциальности</a>.
+            </p>
+            <div class="cookie-banner__actions">
+                <button type="button" class="btn btn-primary cookie-banner__accept" id="cookie-accept">Принять</button>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

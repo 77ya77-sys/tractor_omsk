@@ -26,7 +26,7 @@
     --spacing-xxxl: 64px;
 
     /* Layout & FX */
-    --container-width: 1240px;
+    --container-width: 1440px;
     --container-padding: 20px;
     --border-radius-sm: 4px;
     --border-radius-md: 8px;
@@ -1096,6 +1096,32 @@ section.facts.hero--industrial {
     font-weight: 500;
 }
 
+.checkbox-error {
+    display: none;
+    font-size: 0.75rem;
+    color: #dc3545;
+    margin-top: 4px;
+    width: 100%;
+    flex-basis: 100%;
+}
+
+.checkbox-label {
+    flex-wrap: wrap;
+}
+
+.checkbox-label--error .checkbox-custom {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 1px rgba(220, 53, 69, 0.3);
+}
+
+.checkbox-label--error .checkbox-text {
+    color: #dc3545;
+}
+
+.checkbox-label--error .checkbox-error {
+    display: block;
+}
+
 /* Light version for dark background (cta-section) */
 .checkbox-label--light {
     color: rgba(255, 255, 255, 0.7);
@@ -1113,6 +1139,18 @@ section.facts.hero--industrial {
 
 .checkbox-label--light .checkbox-text a {
     color: var(--color-white);
+}
+
+/* При одновременных light + error ошибка должна побеждать светлую тему */
+.checkbox-label--light.checkbox-label--error .checkbox-custom {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 1px rgba(220, 53, 69, 0.5);
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+.checkbox-label--light.checkbox-label--error .checkbox-text,
+.checkbox-label--light.checkbox-label--error .checkbox-text a {
+    color: #ffc9c9;
 }
 
 .bottom-form-container {
@@ -1504,8 +1542,28 @@ section.facts.hero--industrial {
 .footer__bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 30px;
-    text-align: center;
+    padding-bottom: 10px;
     font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    gap: var(--spacing-md);
+}
+
+.footer__bottom-text {
+    margin: 0;
+    color: var(--color-gray);
+}
+
+.footer__privacy-link {
+    color: var(--color-white);
+    text-decoration: underline;
+    font-size: 0.875rem;
+}
+
+.footer__privacy-link:hover {
+    color: var(--color-primary);
 }
 
 /* Media Queries (Desktop First flow adjusted for Mobile First) */
@@ -1782,6 +1840,12 @@ section.facts.hero--industrial {
         gap: 30px !important;
     }
 
+    .footer__bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
     /* 10. КАТАЛОГ ТЕХНИК — карточки в 1 колонку */
     .fleet__grid {
         grid-template-columns: 1fr !important;
@@ -1896,48 +1960,238 @@ section.facts.hero--industrial {
 }
 
 .modal__content--success {
-    max-width: 440px; 
-    text-align: center; 
-    border-radius: 12px; 
-    padding: 40px 24px; 
-    z-index: 999999; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    position: absolute; 
+    max-width: 400px;
+    width: 88%;
+    text-align: center;
+    border-radius: 16px;
+    padding: 48px 28px 36px;
     margin: 0;
 }
 
 #success-modal-close {
-    background: rgba(0,0,0,0.1); 
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.08);
     color: #1a1a1a;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    z-index: 10;
+    transition: background 0.2s;
+}
+
+#success-modal-close:hover {
+    background: rgba(0, 0, 0, 0.15);
 }
 
 #success-modal .success-icon {
-    font-size: 3.5rem; 
-    margin-bottom: 24px;
+    font-size: 3rem;
+    margin-bottom: 20px;
 }
 
 #success-modal h3 {
-    font-size: 1.75rem; 
-    margin-bottom: 16px; 
+    font-size: 1.5rem;
+    margin-bottom: 12px;
     color: var(--color-dark);
 }
 
 #success-modal p {
-    font-size: 1rem; 
-    color: var(--color-gray); 
-    line-height: 1.5; 
+    font-size: 0.9375rem;
+    color: var(--color-gray);
+    line-height: 1.5;
     margin-bottom: 0;
 }
 
 .success-phone {
-    color: var(--color-dark); 
-    font-size: 1.125rem;
+    color: var(--color-dark);
+    font-size: 1.0625rem;
+}
+
+@media (max-width: 480px) {
+    .modal__content--success {
+        width: 85%;
+        max-width: 320px;
+        padding: 36px 20px 28px;
+        border-radius: 14px;
+    }
+
+    #success-modal .success-icon {
+        font-size: 2.5rem;
+        margin-bottom: 16px;
+    }
+
+    #success-modal h3 {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+    }
+
+    #success-modal p {
+        font-size: 0.875rem;
+    }
+
+    .success-phone {
+        font-size: 1rem;
+    }
 }
 
 .footer__messengers {
     margin-top: 15px; 
     display: flex; 
     gap: 10px;
+}
+
+/* -----------------------------
+   Cookie consent banner
+   Десктоп: выезжает слева. Мобилка: снизу по центру.
+----------------------------- */
+.cookie-banner {
+    --cookie-banner-width: 340px;
+    position: fixed;
+    left: 24px;
+    bottom: 24px;
+    transform: translateX(-110%);
+    width: min(var(--cookie-banner-width), calc(100vw - 30px));
+    max-width: calc(100vw - 30px);
+    z-index: 999998;
+    background: var(--color-white);
+    box-shadow: var(--shadow-hover);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-lg) var(--spacing-lg);
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 1px solid var(--color-border);
+}
+
+.cookie-banner.is-visible {
+    transform: translateX(0);
+}
+
+.cookie-banner__close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    transform: none;
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: var(--color-light-gray);
+    color: var(--color-dark-gray);
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.cookie-banner__close:hover {
+    background: var(--color-dark);
+    color: var(--color-white);
+}
+
+.cookie-banner__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.cookie-banner__text {
+    font-size: 0.875rem;
+    color: var(--color-dark-gray);
+    line-height: 1.45;
+    margin: 0;
+}
+
+.cookie-banner__text a {
+    color: var(--color-dark);
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.cookie-banner__text a:hover {
+    color: var(--color-primary);
+}
+
+.cookie-banner__actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.cookie-banner__accept {
+    padding: 10px 20px;
+    font-size: 0.9375rem;
+}
+
+.cookie-banner__share {
+    font-size: 0.8125rem;
+    color: var(--color-gray);
+    text-decoration: none;
+}
+
+.cookie-banner__share:hover {
+    color: var(--color-dark);
+}
+
+/* Мобильная версия: плашка снизу по центру */
+@media (max-width: 768px) {
+    .cookie-banner {
+        left: 50%;
+        right: auto;
+        top: auto;
+        bottom: 0;
+        width: calc(100% - 30px);
+        max-width: 400px;
+        transform: translateX(-50%) translateY(100%);
+        border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+        border: 1px solid var(--color-border);
+        border-bottom: none;
+        padding: 36px var(--spacing-lg) var(--spacing-lg);
+    }
+
+    .cookie-banner.is-visible {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    .cookie-banner__close {
+        left: 50%;
+        top: 10px;
+        transform: translateX(-50%);
+    }
+
+    .cookie-banner__text {
+        text-align: center;
+    }
+
+    .cookie-banner__actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cookie-banner__accept {
+        width: 100%;
+    }
+
+    .cookie-banner__share {
+        text-align: center;
+    }
+}
+
+@media (min-width: 769px) {
+    .cookie-banner__actions {
+        margin-top: var(--spacing-sm);
+        margin-left: auto;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
 }

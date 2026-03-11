@@ -1,6 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ==============================
+       Cookie consent banner
+       ============================== */
+    const COOKIE_CONSENT_KEY = 'tractor_omsk_cookie_consent';
+    const cookieBanner = document.getElementById('cookie-banner');
+    const cookieClose = document.getElementById('cookie-close');
+    const cookieAccept = document.getElementById('cookie-accept');
+
+    function showCookieBanner() {
+        if (!cookieBanner) return;
+        if (localStorage.getItem(COOKIE_CONSENT_KEY)) return;
+        cookieBanner.setAttribute('aria-hidden', 'false');
+        cookieBanner.classList.add('is-visible');
+    }
+
+    function hideCookieBanner(saveConsent) {
+        if (!cookieBanner) return;
+        cookieBanner.classList.remove('is-visible');
+        cookieBanner.setAttribute('aria-hidden', 'true');
+        if (saveConsent) localStorage.setItem(COOKIE_CONSENT_KEY, '1');
+    }
+
+    if (cookieBanner) {
+        setTimeout(showCookieBanner, 800);
+        if (cookieClose) cookieClose.addEventListener('click', () => hideCookieBanner(false));
+        if (cookieAccept) cookieAccept.addEventListener('click', () => hideCookieBanner(true));
+    }
+
+    /* ==============================
        1. ЛОГИКА ТАБОВ И КАРУСЕЛИ (АВТОПАРК)
        ============================== */
     const tabBtns = document.querySelectorAll('.tab-btn');
@@ -110,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const actions = document.getElementById('quiz-actions');
     const successMsg = document.getElementById('quiz-success');
     const form = document.getElementById('quiz-form');
+    const bottomForm = document.getElementById('bottom-form');
 
     let currentStep = 0;
     const totalSteps = steps.length;
@@ -184,19 +213,56 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function setupAgreeValidation(formElement, labelId) {
+        if (!formElement) return null;
+        const checkbox = formElement.querySelector('input[name="agree"]');
+        const label = document.getElementById(labelId);
+        if (!checkbox || !label) return null;
+
+        checkbox.addEventListener('change', () => {
+            if (checkbox.checked) {
+                label.classList.remove('checkbox-label--error');
+            }
+        });
+
+        return function validate() {
+            if (!checkbox.checked) {
+                label.classList.add('checkbox-label--error');
+                label.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return false;
+            }
+            label.classList.remove('checkbox-label--error');
+            return true;
+        };
+    }
+
+    const validateQuizAgree = setupAgreeValidation(form, 'quiz-agree-label');
+    const validateBottomAgree = setupAgreeValidation(bottomForm, 'bottom-agree-label');
+
     if (form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
 
+            const phone = form.querySelector('#quiz-phone');
+            if (phone && phone.value.replace(/\D/g, '').length < 11) {
+                phone.focus();
+                return;
+            }
+
+            if (validateQuizAgree && !validateQuizAgree()) {
+                return;
+            }
+
             // Здесь должна быть логика отправки (fetch / XMLHttpRequest)
 
-            // Симуляция успешной отправки
-            steps.forEach(step => step.style.display = 'none');
-            actions.style.display = 'none';
-            stepText.style.display = 'none';
-            progressFill.style.width = '100%';
+            // Открываем ту же модалку успеха, что и нижняя форма
+            const sm = document.getElementById('success-modal');
+            if (sm) {
+                sm.classList.add('is-active');
+                document.body.style.overflow = 'hidden';
+            }
 
-            successMsg.style.display = 'block';
+            form.reset();
         });
     }
 
@@ -347,7 +413,6 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ==============================
        6. НИЖНЯЯ ФОРМА ЗАЯВКИ
        ============================== */
-    const bottomForm = document.getElementById('bottom-form');
     const successModal = document.getElementById('success-modal');
     const successModalClose = document.getElementById('success-modal-close');
     const successModalOverlay = document.getElementById('success-modal-overlay');
@@ -355,6 +420,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (bottomForm && successModal) {
         bottomForm.addEventListener('submit', (e) => {
             e.preventDefault(); // Останавливаем стандартную отправку
+
+            if (validateBottomAgree && !validateBottomAgree()) {
+                return;
+            }
 
             // Здесь может быть AJAX запрос к серверу
 
