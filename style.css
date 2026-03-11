@@ -2149,13 +2149,12 @@ section.facts.hero--industrial {
         left: 50%;
         right: auto;
         top: auto;
-        bottom: 0;
+        bottom: 15px;
         width: calc(100% - 30px);
         max-width: 400px;
         transform: translateX(-50%) translateY(100%);
-        border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+        border-radius: var(--border-radius-lg);
         border: 1px solid var(--color-border);
-        border-bottom: none;
         padding: 36px var(--spacing-lg) var(--spacing-lg);
     }
 
